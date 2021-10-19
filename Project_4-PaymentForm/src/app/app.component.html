@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Payment Form</h3>
+
+  <div class="input_form">
+    <div class="">
+      <label>Receiver Name</label><br/>
+      <input class="" type="text" (input)="onNameChanged(($any($event.target).value))">
+      <label class="output_label">{{name | titlecase}}</label>
+    </div>
+  </div>
+
+  <div class="input_form">
+    <label>Payment Date</label><br/>
+    <input type="date" (input)="onDateChanged(($any($event.target).value))">
+    <label class="output_label">{{entered_date | date:"longDate"}}</label>
+  </div>
+
+  <div class="input_form">
+    <label>Amount</label><br/>
+    <input type="text" (input)="onAmountChanged(($any($event.target).value))">
+    <label class="output_label">{{amount | currency:"ETH"}}</label>
+  </div>
+</div>
