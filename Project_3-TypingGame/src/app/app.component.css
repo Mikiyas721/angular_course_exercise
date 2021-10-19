@@ -1,0 +1,18 @@
+#lengthInput {
+  margin: 5px 0;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.pending {
+  color: black;
+}
+.bigText{
+  font-size: 24px;
+}
