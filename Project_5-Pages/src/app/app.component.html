@@ -1,0 +1,61 @@
+<nav>
+  <ul class="pagination">
+    <li
+      class="page-item"
+      [appClass]="{disabled:currentPage===0}">
+      <a
+        class="page-link disabled"
+        (click)="currentPage = currentPage-1"
+      >Previous</a>
+    </li>
+    <!--<ng-container *ngFor="let item of pages;let i = index">
+      <li
+        (click)="onItemClick(i)"
+        class="page-item"
+        [appClass]="{active:i===currentPage}"
+        *ngIf="getWindowIndex(i)">
+        <a class="page-link">{{i + 1}}</a>
+      </li>
+    </ng-container>-->
+    <!--Alternatively we could use the custom structural directive created as follows-->
+    <ng-container *appNTimes="pages.length;let i = index">
+      <!--Could be replaced with the custom structural directive "appNTimes"-->
+      <li
+        (click)="onItemClick(i)"
+        class="page-item"
+        [appClass]="{active:i===currentPage}"
+        *ngIf="getWindowIndex(i)">
+        <a class="page-link">{{i + 1}}</a>
+      </li>
+    </ng-container>
+
+    <li
+      class="page-item"
+      [appClass]="{disabled:currentPage===pages.length-1}">
+      <a
+        class="page-link"
+        (click)="currentPage = currentPage+1"
+      >Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h4>{{pages[currentPage].title}}</h4>
+  <img [src]="pages[currentPage].imageUrl">
+</div>
+
+<br>
+<div [ngSwitch]="currentPage">
+  <div *ngSwitchCase="0">This is page 1</div>
+  <div *ngSwitchCase="1">This is page 2</div>
+  <div *ngSwitchCase="2">This is page 3</div>
+  <div *ngSwitchCase="3">This is page 4</div>
+  <div *ngSwitchCase="4">This is page 5</div>
+  <div *ngSwitchDefault>This is page greater than 5</div>
+</div>
+
+<br>
+<ul *appNTimes="5">
+  <li>This is created using a custom structural directive</li>
+</ul>
