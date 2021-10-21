@@ -1,0 +1,11 @@
+.actions:empty { /*Dont display the tag with class actions if it is empty*/
+  display: none;
+}
+
+.actions-default { /*Dont display the tag with class default*/
+  display: none;
+}
+
+.actions:empty + .actions-default { /*If the tag with class actions is empty, add the sibling tag with class default*/
+  display: block;
+}

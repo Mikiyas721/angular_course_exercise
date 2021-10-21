@@ -1,0 +1,3 @@
+.div.ui.icon.header:empty { /*Used to remove the header div if it has no content*/
+  display: none;
+}

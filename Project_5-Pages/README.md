@@ -10,5 +10,5 @@
    5. Use the '@Input()' decorator along with a setter to allow for property binding
    6. We can use Input Aliasing to avoid using a separate call to the directive and property binding.
    7. ElementRef used in attribute directive
-   8. TemplateRef, ViewContainerRef used in structural directive   
+   8. "TemplateRef", "ViewContainerRef" used in structural directive   
 - This project uses bootstrap styling Framework

@@ -1,0 +1,14 @@
+<app-my-divider>Table Component</app-my-divider>
+<app-table [data]="data" [headers]="headers"></app-table>
+
+<app-my-divider>Tab Menu</app-my-divider>
+<app-tabs>
+  <a
+    class="item"
+    routerLinkActive="active"
+    routerLink="./"
+    [routerLinkActiveOptions]="{exact:true}"
+  >Biology</a>
+  <a class="item" routerLinkActive="active" routerLink="companies">Companies</a>
+  <a class="item" routerLinkActive="active" routerLink="partners">Partners</a>
+</app-tabs>
