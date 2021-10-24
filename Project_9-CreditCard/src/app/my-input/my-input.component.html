@@ -1,0 +1,22 @@
+<div class="field">
+  <label class="label">{{label}}</label>
+  <div class="control">
+    <input
+      class="input"
+      [formControl]="control"
+      [ngClass]="{'is-danger':hasError()}"
+    >
+  </div>
+  <ng-container *ngIf="hasError()">
+    <div class="help is-danger" style="color: red" *ngIf="control.errors.required">
+      Value is required
+    </div>
+    <div class="help is-danger" style="color: red" *ngIf="control.errors.minlength">
+      Input has to be at least 5 characters
+    </div>
+    <div class="help is-danger" style="color: red" *ngIf="control.errors.pattern">
+      Invalid format
+    </div>
+    <!--Add additional dives to display other validation messages-->
+  </ng-container>
+</div>
