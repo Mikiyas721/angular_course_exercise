@@ -9,3 +9,16 @@
 .actions:empty + .actions-default { /*If the tag with class actions is empty, add the sibling tag with class default*/
   display: block;
 }
+.frameWorkIcon{
+  width:64px
+}
+.engagement{
+  color: grey;
+  font-size: 15px;
+  align-self: end;
+}
+.engagementSpan{
+  color: grey;
+  font-style: italic;
+  font-size: 15px;
+}

@@ -17,7 +17,22 @@ import {
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter()
+  framework = {
+    title: 'Kotlin',
+    iconUrl: '/assets/logos/kotlin.png',
+    engagement: '>2years',
+    courses:[
+      'ABC123',
+      'ABC123',
+      'ABC123',
+    ],
+    projects: [
+      '123ABC',
+      '123ABC',
+      '123ABC',
+    ],
 
+  }
   constructor(private elementRef: ElementRef) {
   }
 

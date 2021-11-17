@@ -1,0 +1,24 @@
+<h3>Create an Account</h3>
+<form (ngSubmit)="onSignUpSubmit()" class="ui form" [formGroup]="authForm">
+  <app-input label="Username" [control]="authForm.get('username')"></app-input>
+  <app-input [isPassword]="true" label="Password" [control]="authForm.get('password')"></app-input>
+  <app-input [isPassword]="true" label="Password Confirmation"
+             [control]="authForm.get('passwordConfirmation')"></app-input>
+
+  <button class="ui submit button primary">Submit</button>
+
+  <ng-container *ngIf="hasError()">
+    <div class="ui red basic label">
+      <p *ngIf="authForm.errors?.passwordsNotMatch">
+        Password confirmation must match password
+      </p>
+      <p *ngIf="authForm.errors?.noConnection">
+        Unable to connect
+      </p>
+      <p *ngIf="authForm.errors?.failedToSignUp">
+        Failed to Sign up
+      </p>
+    </div>
+  </ng-container>
+
+</form>

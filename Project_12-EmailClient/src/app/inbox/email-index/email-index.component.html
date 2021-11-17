@@ -1,0 +1,23 @@
+<div
+  style="text-align: center;
+   margin-top: 20px"
+  *ngIf="emails.length===0"
+>
+  <p>You have no email</p>
+</div>
+
+<div class="ui celled list">
+
+  <div class="item" *ngFor="let email of emails">
+
+    <div class="content">
+      <div class="header">
+        {{email.subject}}
+      </div>
+      <p>
+        {{email.from}}
+      </p>
+    </div>
+
+  </div>
+</div>

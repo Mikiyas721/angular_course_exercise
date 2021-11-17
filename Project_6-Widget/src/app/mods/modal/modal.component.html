@@ -1,21 +1,35 @@
 <div (click)="closeModal()" class="ui dimmer visible active">
   <div class="ui modal visible active" (click)="$event.stopPropagation()">
+
     <i (click)="closeModal()" class="spaced close icon"></i>
-    <div class="header">
-      <ng-content select="[modalTitle]"></ng-content>
+
+    <div>
+      <img class="frameWorkIcon" [src]="framework.iconUrl">
+      <span class="title">{{framework.title}}</span>
+      <span class="engagement">Engagement <span class="engagementSpan">{{framework.engagement}}</span></span>
     </div>
+
+    <hr>
+
     <div class="content">
-      <p>
-        <ng-content></ng-content>
-      </p>
+      <div *ngIf="framework.projects">
+        <p>Projects</p>
+        <div style="margin-left: 20px" *ngFor="let project of framework.projects">
+          {{project}}
+        </div>
+      </div>
+
+      <div *ngIf="framework.courses">
+        <p>Courses</p>
+        <div class="ml-4" *ngFor="let course of framework.courses">
+          {{course}}
+        </div>
+      </div>
+
     </div>
 
     <div class="actions default">
       <button (click)="closeModal()" class="ui button">OK</button>
-    </div>
-
-    <div class="actions">
-      <ng-content select="[actionButton]"></ng-content>
     </div>
 
   </div>

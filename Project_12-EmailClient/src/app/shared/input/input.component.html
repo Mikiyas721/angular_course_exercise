@@ -1,0 +1,24 @@
+<div class="ui field">
+  <label>{{label}}</label>
+  <input [type]="isPassword?'password':'text'" [formControl]="control">
+  <div *ngIf="hasErrors()" class="ui pointing red basic label">
+    <p *ngIf="control.errors.required">
+      {{label}} is required
+    </p>
+    <p *ngIf="control.errors.minlength">
+      {{label}} has to be more than {{control.errors.minlength.requiredLength}} characters
+    </p>
+    <p *ngIf="control.errors.maxlength">
+      {{label}} can not be more than {{control.errors.maxlength.requiredLength}} characters
+    </p>
+    <p *ngIf="control.errors.pattern">
+      Invalid {{label}}
+    </p>
+    <p *ngIf="control.errors.nonUniqueUsername">
+      Username taken
+    </p>
+    <p *ngIf="control.errors.noConnection || control.errors.notFound">
+      Unable to verify username availability
+    </p>
+  </div>
+</div>

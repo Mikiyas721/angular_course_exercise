@@ -14,7 +14,7 @@ Module 13
 Module 14
 
 - When ever angular faces HTML tags comming from the JS, it passes it through an "Angular Escaper".
-  The Angualr Escaper would change the "<" with "&lt;" and ">" with "&gt;".
+  The Angular Escaper would change the "<" with "&lt;" and ">" with "&gt;".
   The browser would then interprate "$lt;" and "$gt;" with "<" and ">" sign respectively
   Interprating those characters sequences as "<" and ">" is the normal behaviour of browser.
 - Angular does this to prevent "Cross-site Scripting"(XSS).

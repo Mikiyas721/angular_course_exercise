@@ -1,0 +1,24 @@
+<h3>Create an Account</h3>
+<form (ngSubmit)="onSignInSubmit()" class="ui form" [formGroup]="authForm">
+  <app-input label="Username" [control]="authForm.get('username')"></app-input>
+  <app-input [isPassword]="true" label="Password" [control]="authForm.get('password')"></app-input>
+
+  <div style="margin-top: 10px" *ngIf="hasError()">
+    <div class="ui red basic label">
+      <p *ngIf="authForm.errors?.noConnection">
+        Unable to connect
+      </p>
+      <p *ngIf="authForm.errors?.failedToSignUp">
+        Failed to Sign In
+      </p>
+      <p *ngIf="authForm.errors?.credentials">
+        Invalid username or password
+      </p>
+    </div>
+  </div>
+
+  <button class="ui submit button primary">Sign In</button>
+
+
+</form>
+
